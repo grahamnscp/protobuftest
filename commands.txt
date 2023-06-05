@@ -1,0 +1,13 @@
+
+go mod init github.com/grahamnscp/protobuftest
+
+go install google.golang.org/protobuf/cmd/protoc-gen-go@latest
+
+go mod tidy
+
+protoc --proto_path=/Users/my/training/go/protobuf --go_out=/Users/my/training/go/protobuf /Users/my/training/go/protobuf/addressbook.proto
+mv github.com/grahamnscp/protobuftest/* .
+rm -rf github.com
+
+go build
+
